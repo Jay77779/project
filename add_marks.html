@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Marks</title>
+    <link rel="stylesheet" href="add_marks.css">
+</head>
+<body>
+    <div class="form-box">
+        <h2>Add Marks for Student</h2>
+
+        <?php if (!empty($success)): ?>
+            <p class="success"><?= $success ?></p>
+        <?php elseif (!empty($error)): ?>
+            <p class="error"><?= $error ?></p>
+        <?php endif; ?>
+
+        <form method="POST" action="add_marks.php">
+            <label>Select Student</label>
+            <select name="student_id" required>
+                <option value="">-- Select --</option>
+                <?php while ($s = $students->fetch_assoc()): ?>
+                    <option value="<?= $s['id'] ?>"><?= $s['name'] ?> (<?= $s['roll_no'] ?>)</option>
+                <?php endwhile; ?>
+            </select>
+
+            <label>Subject</label>
+            <input type="text" name="subject" placeholder="e.g. Math" required>
+
+            <label>Marks</label>
+            <input type="number" name="marks" placeholder="e.g. 85" required>
+
+            <label>Exam Type</label>
+            <input type="text" name="exam" placeholder="e.g. Midterm" required>
+
+            <input type="submit" value="Add Marks">
+        </form>
+        <a href="dashboard.php">⬅ Back to Dashboard</a>
+    </div>
+</body>
+</html>

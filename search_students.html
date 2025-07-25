@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Students</title>
+    <link rel="stylesheet" href="search_students.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Search Students</h2>
+
+        <form method="GET" action="search_students.php">
+            <input type="text" name="search" placeholder="Enter name or email" required>
+            <button type="submit">Search</button>
+        </form>
+
+        <?php if (!empty($students)): ?>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Roll No</th>
+                        <th>Class</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($students as $student): ?>
+                        <tr>
+                            <td><?= htmlspecialchars($student['id']) ?></td>
+                            <td><?= htmlspecialchars($student['name']) ?></td>
+                            <td><?= htmlspecialchars($student['roll_no']) ?></td>
+                            <td><?= htmlspecialchars($student['class']) ?></td>
+                            <td><?= htmlspecialchars($student['email']) ?></td>
+                            <td><?= htmlspecialchars($student['phone']) ?></td>
+                            <td>
+                               <a href='edit_student.php?id=<?= htmlspecialchars($student['id']) ?>'>Edit</a> | <a href='delete_student.php?id=<?= htmlspecialchars($student['id']) ?>' onclick='return confirm("Are you sure?")'>Delete</a>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        <?php elseif ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['search'])): ?>
+            <p>No students found.</p>
+        <?php endif; ?>
+    </div>
+    <a href="dashboard.php" class="btn">Back to Dashboard</a>
+</body>
+</html>

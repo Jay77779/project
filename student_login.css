@@ -1,0 +1,86 @@
+body {
+    background: linear-gradient(135deg, #3153c5 0%, #d15a5a 100%);
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-box {
+    max-width: 350px;
+    width: 100%;
+    margin: 60px auto;
+    background: #fff;
+    padding: 32px 28px 24px 28px;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.13);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: background 0.3s, color 0.3s, backdrop-filter 0.3s;
+}
+
+.login-box:hover {
+    background: linear-gradient(135deg, #d15a5a 0%, #3153c5 100%);
+    color: #fff;
+    backdrop-filter: blur(4px);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+    letter-spacing: 1px;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px 12px;
+    margin: 10px 0 16px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: border 0.2s;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border: 1.5px solid #007bff;
+    outline: none;
+}
+
+input[type="submit"] {
+    width: 100%;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,123,255,0.08);
+    transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+    margin-top: 10px;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+    box-shadow: 0 4px 16px rgba(0,123,255,0.18);
+    transform: translateY(-2px) scale(1.03);
+}
+
+.error {
+    color: #d8000c;
+    background: #ffe0e0;
+    border: 1px solid #d8000c;
+    padding: 8px 12px;
+    border-radius: 6px;
+    margin-bottom: 12px;
+    width: 100%;
+    text-align: center;
+}

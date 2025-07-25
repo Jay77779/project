@@ -1,0 +1,127 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #3153c5 0%, #d15a5a 100%);
+    padding: 30px;
+    margin: 0;
+}
+
+.container {
+    max-width: 700px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 28px 24px 24px 24px;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+}
+
+.container:hover {
+    background: linear-gradient(135deg, #d15a5a 0%, #3153c5 100%);
+    color: #fff;
+    backdrop-filter: blur(4px);
+    transition: background 0.3s, color 0.3s, backdrop-filter 0.3s;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 24px;
+    color: #333;
+    letter-spacing: 1px;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+
+form input[type="text"] {
+    width: 60%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+    transition: border 0.2s;
+}
+
+form input[type="text"]:focus {
+    border: 1.5px solid #007bff;
+}
+
+form button {
+    padding: 10px 22px;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    margin-left: 10px;
+    cursor: pointer;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background 0.2s, transform 0.2s;
+}
+
+form button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px) scale(1.03);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    background: transparent;
+}
+
+table th, table td {
+    border: 1px solid #ccc;
+    padding: 12px 10px;
+    text-align: left;
+    font-size: 16px;
+}
+
+table th {
+    background-color: #007bff;
+    color: white;
+    letter-spacing: 1px;
+}
+
+table tr:nth-child(even) td {
+    background-color: #f1f5fa;
+}
+
+table tr:hover td {
+    background-color: #e3eefd;
+}
+
+.btn {
+    display: inline-block;
+    margin: 24px auto 0 auto;
+    padding: 10px 22px;
+    background: #007bff;
+    color: #fff !important;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,123,255,0.08);
+    transition: background 0.2s, transform 0.2s;
+    text-align: center;
+}
+
+.btn:hover, .btn:focus {
+    background: #0056b3;
+    color: #fff !important;
+    transform: translateY(-2px) scale(1.03);
+}
+
+@media (max-width: 800px) {
+    .container {
+        padding: 12px 4px;
+    }
+    form input[type="text"] {
+        width: 100%;
+    }
+}
